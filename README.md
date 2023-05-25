@@ -5,6 +5,9 @@ Boilerplate for fast golang service development.
 ## Project layout
 https://github.com/golang-standards/project-layout
 
+## Makefile
+https://www.alexedwards.net/blog/a-time-saving-makefile-for-your-go-projects
+
 ## Graceful shutdown
 https://www.rudderstack.com/blog/implementing-graceful-shutdown-in-go/
 
