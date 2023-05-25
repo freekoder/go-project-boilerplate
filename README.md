@@ -1,6 +1,7 @@
 # Blueprint/Boilerplate for golang service project
 
-Boilerplate for fast golang service development.
+Boilerplate for fast golang service development. 
+This project can be useful for golang beginners as a collection of service recipes.
 
 ## Project layout
 https://github.com/golang-standards/project-layout
@@ -9,7 +10,12 @@ https://github.com/golang-standards/project-layout
 https://www.alexedwards.net/blog/a-time-saving-makefile-for-your-go-projects
 
 ## Graceful shutdown
+Shutdown of service is based on the article "Implementing Graceful Shutdown in Go" by Leonidas Vrachnis:
 https://www.rudderstack.com/blog/implementing-graceful-shutdown-in-go/
+
+Shutdown uses signal.NotifyContext(https://pkg.go.dev/os/signal#NotifyContext) and 
+errgroup.WithContext(https://pkg.go.dev/golang.org/x/sync/errgroup#WithContext)
+
 
 ## Web framework
 https://echo.labstack.com/
