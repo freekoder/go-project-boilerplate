@@ -36,11 +36,12 @@ https://github.com/go-swagger/go-swagger
 - [ ] Project structure
 - [ ] Makefile
 - [ ] Logging
+- [ ] Graceful shutdown
 - [ ] Graylog
 - [ ] Command line args
 - [ ] Configuration
 - [ ] Profiling
-- [ ] Graceful shutdown
+- [ ] Dependency injection
 - [ ] Web framework
 - [ ] Templates
 - [ ] REST-API
