@@ -5,15 +5,41 @@ Boilerplate for fast golang service development.
 ## Project layout
 https://github.com/golang-standards/project-layout
 
+## Graceful shutdown
+https://www.rudderstack.com/blog/implementing-graceful-shutdown-in-go/
+
+## Web framework
+https://echo.labstack.com/
+
+## Clean template
+https://evrone.com/blog/go-clean-template
+
+## Configuration
+https://github.com/ilyakaznacheev/cleanenv
+
+## Logging
+https://github.com/uber-go/zap
+https://github.com/rs/zerolog
+https://github.com/snovichkov/zap-gelf
+
+## REST-API
+https://betterprogramming.pub/intro-77f65f73f6d3
+
+## Swagger
+https://github.com/swaggo/swag
+https://github.com/go-swagger/go-swagger
+
 ## TODO
 - [ ] Project structure
 - [ ] Makefile
 - [ ] Logging
+- [ ] Graylog
 - [ ] Command line args
 - [ ] Configuration
 - [ ] Profiling
 - [ ] Graceful shutdown
 - [ ] Web framework
+- [ ] Templates
 - [ ] REST-API
 - [ ] JWT
 - [ ] Swagger
@@ -23,3 +49,9 @@ https://github.com/golang-standards/project-layout
 - [ ] Sentry
 - [ ] Docker
 - [ ] Clean architecture
+- [ ] Linter
+- [ ] Testing
+- [ ] Database
+- [ ] Migrations
+- [ ] Redis
+- [ ] RabbitMQ/AMQP
