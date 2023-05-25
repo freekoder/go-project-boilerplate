@@ -10,7 +10,7 @@ https://github.com/golang-standards/project-layout
 https://www.alexedwards.net/blog/a-time-saving-makefile-for-your-go-projects
 
 ## Graceful shutdown
-Shutdown of service is based on the article "Implementing Graceful Shutdown in Go" by Leonidas Vrachnis:
+Shutdown of the service is based on the article "Implementing Graceful Shutdown in Go" by Leonidas Vrachnis:
 https://www.rudderstack.com/blog/implementing-graceful-shutdown-in-go/
 
 Shutdown uses signal.NotifyContext(https://pkg.go.dev/os/signal#NotifyContext) and 

@@ -10,14 +10,15 @@ import (
 )
 
 func main() {
-	mainCtx, cancel := signal.NotifyContext(context.Background(), os.Interrupt, syscall.SIGTERM)
-	defer cancel()
+	mainCtx, stop := signal.NotifyContext(context.Background(), os.Interrupt, syscall.SIGTERM)
+	defer stop()
 
 	g, gCtx := errgroup.WithContext(mainCtx)
 
 	g.Go(func() error {
 		<-gCtx.Done()
-		return nil
+		stop() // Reset os.Interrupt default behavior, similar to signal.Reset (TODO: add link to description)
+		return gCtx.Err()
 	})
 
 	if err := g.Wait(); err != nil {
