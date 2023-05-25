@@ -2,6 +2,9 @@
 
 Boilerplate for fast golang service development.
 
+## Project layout
+https://github.com/golang-standards/project-layout
+
 ## TODO
 - [ ] Project structure
 - [ ] Makefile
@@ -14,6 +17,7 @@ Boilerplate for fast golang service development.
 - [ ] REST-API
 - [ ] JWT
 - [ ] Swagger
+- [ ] Websockets
 - [ ] gRPC
 - [ ] CI
 - [ ] Sentry
