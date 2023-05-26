@@ -3,11 +3,11 @@ package main
 import (
 	"context"
 	"fmt"
+	"github.com/freekoder/go-project-boilerplate/internal/web"
 	"golang.org/x/sync/errgroup"
 	"os"
 	"os/signal"
 	"syscall"
-	"time"
 )
 
 func main() {
@@ -18,13 +18,18 @@ func main() {
 	// errgroup manage running of project subsystems
 	g, gCtx := errgroup.WithContext(mainCtx)
 
+	server := web.New(gCtx)
+
+	g.Go(func() error {
+		return server.Run()
+	})
+
 	g.Go(func() error {
 		<-gCtx.Done()
-		fmt.Println("done")
 		// Reset os.Interrupt default behavior, similar to signal.Reset
 		// use stop() here if you want to interrupt graceful shutdown on second SIGINT
 		// stop()
-		time.Sleep(20 * time.Second)
+		_ = server.Shutdown()
 		// use stop() here if you want to ignore the following SIGINT signal and fully complete shutdown
 		stop()
 		return gCtx.Err()
