@@ -7,7 +7,33 @@ This project can be useful for golang beginners as a collection of service recip
 https://github.com/golang-standards/project-layout
 
 ## Makefile
-https://www.alexedwards.net/blog/a-time-saving-makefile-for-your-go-projects
+The Makefile was taken from the article 
+["Quick tip: A time-saving Makefile for your Go projects"](https://www.alexedwards.net/blog/a-time-saving-makefile-for-your-go-projects)
+by Alex Edwards
+
+```shell
+$ make help                                                                                                                          INT ✘ │ 21s   │ base 🐍 │ mc 
+Usage:
+  help                print this help message
+  tidy                format code and tidy modfile
+  audit               run quality control checks
+  test                run all tests
+  test/cover          run all tests and display coverage
+  build               build the application
+  run                 run the  application
+  run/live            run the application with reloading on file changes
+  push                push changes to the remote Git repository
+  production/deploy   deploy the application to production
+```
+This Makefile contains **run/live** target. It allows to run application with live reloads.
+**run/live** implemented on base of 
+[Air - Live reload for Go apps](https://github.com/cosmtrek/air). More information can be found at 
+["Using Air with Go to implement live reload"](https://blog.logrocket.com/using-air-go-implement-live-reload/).
+
+Unfortunately, this Makefile is missing linting target, based on [golangci-lint](https://github.com/golangci/golangci-lint).
+
+TODO:
+- [ ] Add linter to Makefile 
 
 ## Graceful shutdown
 Shutdown of the service is based on the article 
@@ -15,16 +41,18 @@ Shutdown of the service is based on the article
 by Leonidas Vrachnis.
 
 Graceful shutdown uses:
-* [signal.NotifyContext from os/signal package](https://pkg.go.dev/os/signal#NotifyContext) 
-* [errgroup.WithContext from golang.org/x/sync/errgroup package](https://pkg.go.dev/golang.org/x/sync/errgroup#WithContext)
+* [signal.NotifyContext() from os/signal package](https://pkg.go.dev/os/signal#NotifyContext) 
+* [errgroup.WithContext() from golang.org/x/sync/errgroup package](https://pkg.go.dev/golang.org/x/sync/errgroup#WithContext)
 
 > **Warning**
 > signal.NotifyContext was added only in golang 1.16
 
 > **Note**
-> Links to errgroup use cases:
-> * [Why you should be using errgroup.WithContext() in your Golang server handlers](https://www.fullstory.com/blog/why-errgroup-withcontext-in-golang-server-handlers/)
-> * [LEARNING GO: CONCURRENCY PATTERNS USING ERRGROUP PACKAGE](https://mariocarrion.com/2021/09/03/learning-golang-concurrency-patterns-errgroup-package.html)
+> errgroup use cases:
+> * ["Why you should be using errgroup.WithContext() in your Golang server handlers"](https://www.fullstory.com/blog/why-errgroup-withcontext-in-golang-server-handlers/)
+> by Scott Blum
+> * ["LEARNING GO: CONCURRENCY PATTERNS USING ERRGROUP PACKAGE"](https://mariocarrion.com/2021/09/03/learning-golang-concurrency-patterns-errgroup-package.html)
+> by Mario Carrion
 
 ## Web framework
 https://echo.labstack.com/
