@@ -1,6 +1,6 @@
 # Blueprint/Boilerplate for golang service project
 
-Boilerplate for fast golang service development. 
+A boilerplate for fast golang service development. 
 This project can be useful for golang beginners as a collection of service recipes.
 
 ## Project layout
@@ -10,12 +10,21 @@ https://github.com/golang-standards/project-layout
 https://www.alexedwards.net/blog/a-time-saving-makefile-for-your-go-projects
 
 ## Graceful shutdown
-Shutdown of the service is based on the article "Implementing Graceful Shutdown in Go" by Leonidas Vrachnis:
-https://www.rudderstack.com/blog/implementing-graceful-shutdown-in-go/
+Shutdown of the service is based on the article 
+["Implementing Graceful Shutdown in Go"](https://www.rudderstack.com/blog/implementing-graceful-shutdown-in-go/) 
+by Leonidas Vrachnis.
 
-Shutdown uses signal.NotifyContext(https://pkg.go.dev/os/signal#NotifyContext) and 
-errgroup.WithContext(https://pkg.go.dev/golang.org/x/sync/errgroup#WithContext)
+Graceful shutdown uses:
+* [signal.NotifyContext from os/signal package](https://pkg.go.dev/os/signal#NotifyContext) 
+* [errgroup.WithContext from golang.org/x/sync/errgroup package](https://pkg.go.dev/golang.org/x/sync/errgroup#WithContext)
 
+> **Warning**
+> signal.NotifyContext was added only in golang 1.16
+
+> **Note**
+> 
+> [Why you should be using errgroup.WithContext() in your Golang server handlers](https://www.fullstory.com/blog/why-errgroup-withcontext-in-golang-server-handlers/)
+> [LEARNING GO: CONCURRENCY PATTERNS USING ERRGROUP PACKAGE](https://mariocarrion.com/2021/09/03/learning-golang-concurrency-patterns-errgroup-package.html)
 
 ## Web framework
 https://echo.labstack.com/
