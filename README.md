@@ -22,9 +22,9 @@ Graceful shutdown uses:
 > signal.NotifyContext was added only in golang 1.16
 
 > **Note**
-> 
-> [Why you should be using errgroup.WithContext() in your Golang server handlers](https://www.fullstory.com/blog/why-errgroup-withcontext-in-golang-server-handlers/)
-> [LEARNING GO: CONCURRENCY PATTERNS USING ERRGROUP PACKAGE](https://mariocarrion.com/2021/09/03/learning-golang-concurrency-patterns-errgroup-package.html)
+> Links to errgroup use cases:
+> * [Why you should be using errgroup.WithContext() in your Golang server handlers](https://www.fullstory.com/blog/why-errgroup-withcontext-in-golang-server-handlers/)
+> * [LEARNING GO: CONCURRENCY PATTERNS USING ERRGROUP PACKAGE](https://mariocarrion.com/2021/09/03/learning-golang-concurrency-patterns-errgroup-package.html)
 
 ## Web framework
 https://echo.labstack.com/
