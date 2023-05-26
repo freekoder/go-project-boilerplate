@@ -3,13 +3,18 @@
 A boilerplate for fast golang service development. 
 This project can be useful for golang beginners as a collection of service recipes.
 
+## Targets
+- [ ] Create template for rapid golang service development
+- [ ] Collect in one place best practices for golang service development
+- [ ] Highlight the best tools for beginner golang developers
+
 ## Project layout
 https://github.com/golang-standards/project-layout
 
 ## Makefile
 The Makefile was taken from the article 
 ["Quick tip: A time-saving Makefile for your Go projects"](https://www.alexedwards.net/blog/a-time-saving-makefile-for-your-go-projects)
-by Alex Edwards
+by Alex Edwards.
 
 ```shell
 $ make help                                                                                                                          INT ✘ │ 21s   │ base 🐍 │ mc 
@@ -30,7 +35,8 @@ This Makefile contains **run/live** target. It allows to run application with li
 [Air - Live reload for Go apps](https://github.com/cosmtrek/air). More information can be found at 
 ["Using Air with Go to implement live reload"](https://blog.logrocket.com/using-air-go-implement-live-reload/).
 
-Unfortunately, this Makefile is missing linting target, based on [golangci-lint](https://github.com/golangci/golangci-lint).
+Unfortunately, this Makefile is missing linting target, based on 
+[golangci-lint](https://github.com/golangci/golangci-lint).
 
 TODO:
 - [ ] Add linter to Makefile 
