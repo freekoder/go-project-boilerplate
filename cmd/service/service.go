@@ -3,6 +3,7 @@ package main
 import (
 	"context"
 	"fmt"
+	"github.com/freekoder/go-project-boilerplate/internal/logger"
 	"github.com/freekoder/go-project-boilerplate/internal/web"
 	"golang.org/x/sync/errgroup"
 	"os"
@@ -11,6 +12,15 @@ import (
 )
 
 func main() {
+	log, err := logger.ConfigureLogger()
+	if err != nil {
+		fmt.Printf("can not configure logger: %v", err)
+		return
+	}
+	defer log.Sync() // flushes buffer, if any
+
+	log.Info("starting service")
+
 	// signal.NotifyContext added in go1.16
 	mainCtx, stop := signal.NotifyContext(context.Background(), os.Interrupt, syscall.SIGTERM)
 	defer stop()
