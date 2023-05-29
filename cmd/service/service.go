@@ -18,10 +18,10 @@ func main() {
 	err := cleanenv.ReadConfig("config.yml", &cfg)
 	if err != nil {
 		fmt.Printf("can not load configuration: %v", err)
-		return
+		os.Exit(1)
 	}
 
-	log, err := logger.ConfigureLogger()
+	log, err := logger.Configure(cfg.Logging)
 	if err != nil {
 		fmt.Printf("can not configure logger: %v", err)
 		return

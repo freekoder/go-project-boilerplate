@@ -20,7 +20,7 @@ The Makefile was taken from the article
 by Alex Edwards.
 
 ```shell
-$ make help                                                                                                                          INT ✘ │ 21s   │ base 🐍 │ mc 
+$ make help                                                            
 Usage:
   help                print this help message
   tidy                format code and tidy modfile
@@ -70,12 +70,12 @@ https://echo.labstack.com/
 https://evrone.com/blog/go-clean-template
 
 ## Configuration
-https://github.com/ilyakaznacheev/cleanenv
-https://dev.to/ilyakaznacheev/clean-configuration-management-in-golang-1c89
+* https://github.com/ilyakaznacheev/cleanenv
+* https://dev.to/ilyakaznacheev/clean-configuration-management-in-golang-1c89
 
 TODO:
-- [ ] Add config sections
-- [ ] Add logger configuration
+- [x] Add config sections
+- [x] Add logger configuration
 - [ ] Add webserver configuration
 
 ## Logging
