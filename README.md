@@ -68,10 +68,10 @@ https://evrone.com/blog/go-clean-template
 
 ## Configuration
 https://github.com/ilyakaznacheev/cleanenv
+https://dev.to/ilyakaznacheev/clean-configuration-management-in-golang-1c89
 
 ## Logging
 https://github.com/uber-go/zap
-https://github.com/rs/zerolog
 https://github.com/snovichkov/zap-gelf
 
 ## REST-API

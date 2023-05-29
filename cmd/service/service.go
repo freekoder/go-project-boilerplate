@@ -3,8 +3,10 @@ package main
 import (
 	"context"
 	"fmt"
+	"github.com/freekoder/go-project-boilerplate/internal/config"
 	"github.com/freekoder/go-project-boilerplate/internal/logger"
 	"github.com/freekoder/go-project-boilerplate/internal/web"
+	"github.com/ilyakaznacheev/cleanenv"
 	"golang.org/x/sync/errgroup"
 	"os"
 	"os/signal"
@@ -12,6 +14,13 @@ import (
 )
 
 func main() {
+	var cfg config.Config
+	err := cleanenv.ReadConfig("config.yml", &cfg)
+	if err != nil {
+		fmt.Printf("can not load configuration: %v", err)
+		return
+	}
+
 	log, err := logger.ConfigureLogger()
 	if err != nil {
 		fmt.Printf("can not configure logger: %v", err)
