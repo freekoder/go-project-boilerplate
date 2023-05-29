@@ -26,7 +26,6 @@ func main() {
 		fmt.Printf("can not configure logger: %v", err)
 		return
 	}
-	defer log.Sync() // flushes buffer, if any
 
 	log.Info("starting service")
 
@@ -49,6 +48,7 @@ func main() {
 		// use stop() here if you want to interrupt graceful shutdown on second SIGINT
 		// stop()
 		_ = server.Shutdown()
+		_ = log.Sync()
 		// use stop() here if you want to ignore the following SIGINT signal and fully complete shutdown
 		stop()
 		return gCtx.Err()

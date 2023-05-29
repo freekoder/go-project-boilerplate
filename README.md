@@ -25,6 +25,7 @@ Usage:
   help                print this help message
   tidy                format code and tidy modfile
   audit               run quality control checks
+  lint                run linter
   test                run all tests
   test/cover          run all tests and display coverage
   build               build the application
@@ -40,9 +41,6 @@ This Makefile contains **run/live** target. It allows to run application with li
 
 Unfortunately, this Makefile is missing linting target, based on 
 [golangci-lint](https://github.com/golangci/golangci-lint).
-
-TODO:
-- [ ] Add linter to Makefile 
 
 ## Graceful shutdown
 Shutdown of the service is based on the article 
@@ -86,8 +84,8 @@ https://github.com/snovichkov/zap-gelf
 https://betterprogramming.pub/intro-77f65f73f6d3
 
 ## Swagger
-https://github.com/swaggo/swag
-https://github.com/go-swagger/go-swagger
+* https://github.com/swaggo/swag
+* https://github.com/go-swagger/go-swagger
 
 ## TODO
 - [ ] Project structure

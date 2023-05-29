@@ -40,6 +40,10 @@ audit:
 	go run golang.org/x/vuln/cmd/govulncheck@latest ./...
 	go test -race -buildvcs -vet=off ./...
 
+## lint: run linter
+.PHONY: lint
+lint:
+	go run github.com/golangci/golangci-lint/cmd/golangci-lint@latest run ./...
 
 # ==================================================================================== #
 # DEVELOPMENT
