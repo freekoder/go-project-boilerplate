@@ -70,6 +70,11 @@ https://evrone.com/blog/go-clean-template
 https://github.com/ilyakaznacheev/cleanenv
 https://dev.to/ilyakaznacheev/clean-configuration-management-in-golang-1c89
 
+TODO:
+- [ ] Add config sections
+- [ ] Add logger configuration
+- [ ] Add webserver configuration
+
 ## Logging
 https://github.com/uber-go/zap
 https://github.com/snovichkov/zap-gelf
