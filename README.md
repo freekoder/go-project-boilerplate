@@ -3,6 +3,9 @@
 A boilerplate for fast golang service development. 
 This project can be useful for golang beginners as a collection of service recipes.
 
+> **Warning**
+> This project is on the development mode now
+
 ## Targets
 - [ ] Create template for rapid golang service development
 - [ ] Collect in one place best practices for golang service development
