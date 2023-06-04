@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"github.com/freekoder/go-project-boilerplate/internal/config"
 	"github.com/freekoder/go-project-boilerplate/internal/logger"
+	"github.com/freekoder/go-project-boilerplate/internal/service"
 	"github.com/freekoder/go-project-boilerplate/internal/web"
 	"github.com/ilyakaznacheev/cleanenv"
 	"golang.org/x/sync/errgroup"
@@ -15,7 +16,7 @@ import (
 
 func main() {
 	var cfg config.Config
-	err := cleanenv.ReadConfig("config.yml", &cfg)
+	err := cleanenv.ReadConfig("configs/config.yml", &cfg)
 	if err != nil {
 		fmt.Printf("can not load configuration: %v", err)
 		os.Exit(1)
@@ -36,18 +37,18 @@ func main() {
 	// errgroup manage running of project subsystems
 	g, gCtx := errgroup.WithContext(mainCtx)
 
-	server := web.New(gCtx)
+	appService := service.New()
 
-	g.Go(func() error {
-		return server.Run()
-	})
+	webServer := web.New(gCtx, cfg.Web, log, appService)
+
+	g.Go(webServer.Run)
 
 	g.Go(func() error {
 		<-gCtx.Done()
 		// Reset os.Interrupt default behavior, similar to signal.Reset
 		// use stop() here if you want to interrupt graceful shutdown on second SIGINT
 		// stop()
-		_ = server.Shutdown()
+		_ = webServer.Shutdown()
 		_ = log.Sync()
 		// use stop() here if you want to ignore the following SIGINT signal and fully complete shutdown
 		stop()
