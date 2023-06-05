@@ -82,6 +82,9 @@ https://betterprogramming.pub/intro-77f65f73f6d3
 * https://github.com/swaggo/swag
 * https://github.com/go-swagger/go-swagger
 
+## Profiling
+* https://flow.com/engineering-blogs/golang-services-improving-observability
+
 ## TODO
 - [ ] Project structure
 - [ ] Makefile
